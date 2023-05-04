@@ -1,0 +1,9 @@
+FROM alpine:latest
+
+WORKDIR /app
+
+RUN for i in $(seq 1 10); do echo $i >> numbers.txt; 
+
+VOLUME /opt
+
+CMD ["cp", "numbers.txt", "/opt/"]
